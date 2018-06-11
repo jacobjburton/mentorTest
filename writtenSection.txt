@@ -1,30 +1,31 @@
 Answer each question in a written format
 
 1. What does semantic HTML mean?
-
+    Semantic HTML is using elements that represents the information it will contain. Example: A <p></p> tag will contain a paragraph. 
 2. What is the box model?
-
+    The box model is the foundational layout of elements of an web app.  Each element is a rectangular box with content (display part of element with height and width), padding (space between content and border, pushes in on content from border), border (area between padding and margin, can be defined to show or be an invisible border), and margin (outer space of the box model, it pushes up against other boxes in the html layout).  
 3. What is the difference between IDs and Classes?
-
+    ID's and Classes are used to manipulate specific elements in an html application.  An ID is unique: an element can only have one ID, and each page can only have one element with a specific ID.  A class can be used on multiple elements, and an element can have multiple classes.
 4. What is z-index (CSS property) useful for?
-
+    Z-index is useful for determining stack order of an element.  In other words, it can help you determine which elements show up on top of others (greater z-index element is always in front of an element with a lower z-index).
 5. Summarize what the keyword 'this' is used for?
-
+    'This' is used to assign context to a particular scope, or object.  By default 'this' refers to the global/window object.  If a method is called as a property of an object 'this' refers to that parent object.  When a constructor function is called with 'new' then 'this' refers to that instance of an object.  'This' can also be assigned using call/apply to assign context to a value passed as an argument to a function.
 6. What is a callback? What are common uses for callbacks in JavaScript?
-
+    A callback is a function passed as a parameter to another function.  That function is called inside the other function.  Callbacks are commonly used within prototype methods (arr.filter, arr.map, etc.) and in API calls.
 7. What is a closure and why is it useful?
-
+    A closure refers to a function and its scope.  An inner function can have access to the outer function even after the execution of that outer function has completed.  The inner function has a reference to the scope of the outer function.  This is useful if you have a public function that needs to be able to access private functions/variables.  
 8. How does a prototype work?
-
+    Prototypes are methods/properties inherited by all instances of like datatype (object.prototype, array.prototype, etc.).  They reside within a prototype object attached to the instance of that datatype and can be used on to manipulate that instance.
 9. What is a component-based framework/library?
-
+    A component-based framework/library is a method for separating pieces of a larger application into smaller components.  These smaller components are specific features/pieces of the larger application.  Components can be reusable throughout the larger application.  
 10. What is the component lifecycle in React?
-
+    React's component lifecyle consists of initialization, update, and destruction.  Initialization consists of setting up inital state/props, sending components to the DOM, and initial rendering of the application (componentWillMount(), componentDidMount()).  Update occurs on any change to state/props (shouldComponentUpdate(), componentWillUpdate(), componentDidUpdate()).  Destruction occurs when a component is removed from the DOM (componentWillUnmount()).
 11. What is REST? (not just a description of the acronym)
-
+    REST is an acronym that stands for REpresentational State Transfer.  It relies on stateless client/server communications.  Uses HTTP protocal to Create (POST), Read (GET), Update (PUT), and Delete (DELETE) data.  A request is sent to the appropriate database, in the form of a JSON object, and returns a response object if the request is accepted, an error if there is a problem.
 12. Name three common ways of getting data from a request (in Express.JS):
-
-
+req.params
+req.query
+req.body
 
 -- =====================
 create table users (
@@ -37,9 +38,13 @@ email varchar(255)
 13. Given the Schema above, write the following four basic CRUD db queries using postgres syntax
 
 -Get all users:
-
+    SELECT * FROM users;
 -Create a new user with the name of 'your name' and an email of 'fake@fake.com':
-
+    INSERT INTO users (name, email)
+    VALUES ('Jacob Burton', 'fake@fake.com);
 -Update the newly created user's name to 'Bobby Boy':
-
+    UPDATE users SET name = 'Bobby Boy'
+    WHERE email = 'fake@fake.com';
 -Delete the newly updated user:
+    DELETE from users
+    WHERE name = 'Bobby Boy';
